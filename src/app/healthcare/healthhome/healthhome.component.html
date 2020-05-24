@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger">Digital HEC</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>
+</nav>
+<style>
+    header.masthead1 {
+        padding-top: 16rem;
+        padding-bottom: calc(10rem - 72px);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0.8) 50%), url(assets/img/healthcarelandscape.jpg);
+    }
+</style>
+
+<header class="masthead1">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <h2 class="text-uppercase text-white font-weight-bold"><i>Healthcare Center</i></h2>
+                <hr class="divider my-4">
+            </div>
+            <div class="col-lg-12 align-self-baseline">
+                <p class="text-white-75 font-weight-light mb-5"><b>Go healthy and happy...!!!!</b></p>
+                <button type="button" class="btn btn-primary btn-xl js-scroll-trigger mr-3" label="Click" (click)="toggleChild();scrollToSection('#appoitnment')">Appoinment</button>
+                <a class=" btn btn-primary btn-xl js-scroll-trigger mr-3 " label="Click" (click)="toggleChild1();scrollToSection1('#nearbyhospital')">Nearby Hospitals</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger mr-3 " href="#about ">Disease Specialist</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger " href="#about ">Health Camps </a>
+            </div>
+        </div>
+    </div>
+</header>
+<style>
+    .page-section1 {
+        padding: 1rem 0;
+    }
+</style>
+<section class="page-section1 bg-primary " id="about ">
+    <div class="container ">
+        <div class="row justify-content-center ">
+            <div class="col-lg-8 text-center ">
+                <h2 class="text-white mt-0 ">Features</h2>
+
+                <hr style="background-color:black" />
+                <div class="container overflow-hidden">
+                    <div class="carousel slide sliders">
+                        <ng-container class="carousel-item" *ngFor="let carousels of carousel; let i=index">
+                            <div class="slider" *ngIf="current==i" @slide>
+                                <div>
+                                    <img class="img " [src]="carousels.image ">
+                                </div>
+                                <div class="carousel-caption d-none d-md-block ">
+                                    <h5 style="color:#11373C; ">{{carousels.carouselCaptionTitle}}</h5>
+                                    <p style="color:#11373C; ">{{carousels.desc}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-appointment [showMePartially]="showVar "></app-appointment>
+<app-nearbyhospital [showMePartially1]="showVar1 "></app-nearbyhospital>

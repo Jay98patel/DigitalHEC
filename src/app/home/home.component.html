@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" (click)="scrollToSection('#page-top')">Digital HEC</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" (click)="scrollToSection('#about')">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" (click)="scrollToSection('#services')">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" (click)="scrollToSection('#contact') ">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <h2 class="text-uppercase text-white font-weight-bold"><i>Digital HEC (Healthcare and Educational
+                        center)</i></h2>
+                <hr class="divider my-4">
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 font-weight-light mb-5">Provides Basic services of Government in healthcare and education Fields</p>
+                <a type="button" class="btn btn-primary btn-xl js-scroll-trigger" routerLink="../healthcare">Healthcare Center</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="education.html">Education Center</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about"> Detail</a>
+            </div>
+        </div>
+    </div>
+</header>
+<app-about></app-about>
+<app-service></app-service>
+<app-contact></app-contact>
+<app-homefooter></app-homefooter>

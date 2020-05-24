@@ -1,0 +1,40 @@
+<section id="appointment">
+
+
+    <div class="d-flex justify-content-center" *ngIf="showMePartially">
+
+        <div class="container bg-appointment-form shadow my-5 py-5">
+            <div>
+                <h1>
+                    Appointment Form
+                </h1>
+            </div>
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <input type="text" class="form-control" name="name" placeholder="Name">
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <input type="num" class="form-control" name="address" placeholder="Phone Num">
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <input type="text" class="form-control" name="phone" placeholder="Doctor's Name">
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <input type="text" class="form-control " name="address" placeholder="Hospital Name">
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <input type="text" class="form-control" name="address" placeholder="diseases">
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <input type="date" class="form-control" name="address" placeholder="Date of Appointment">
+                    </div>
+
+                </div>
+                <div>
+                    <button class="btn btn-info">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "digitalhec-fc40e": {
+      "hosting": {
+        "digitalHEC": [
+          "digitalhec-fc40e"
+        ]
+      }
+    }
+  }
+}
