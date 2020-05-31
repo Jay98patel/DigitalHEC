@@ -5,18 +5,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-export const firebaseConfig =environment.firebaseConfig;
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
+  providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

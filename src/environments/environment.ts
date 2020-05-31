@@ -4,17 +4,17 @@
 
 export const environment = {
   production: false,
-  firebaseConfig :{
-    apiKey: "AIzaSyDVwgHOk7sJsnf--Jn0C6dxMtQALqOTDk0",
-    authDomain: "digitalhec-fc40e.firebaseapp.com",
-    databaseURL: "https://digitalhec-fc40e.firebaseio.com",
-    projectId: "digitalhec-fc40e",
-    storageBucket: "digitalhec-fc40e.appspot.com",
-    messagingSenderId: "569737326095",
-    appId: "1:569737326095:web:c7af01655cad7d43d47d7a",
-    measurementId: "G-50Z5DBWDKE"
-  },
-  googleMapsKey:'AIzaSyAWVu2OB3NK_ecSSSGWipOoJVf9IKshwJ0'
+  firebaseConfig:{
+  apiKey: "AIzaSyDVwgHOk7sJsnf--Jn0C6dxMtQALqOTDk0",
+  authDomain: "digitalhec-fc40e.firebaseapp.com",
+  databaseURL: "https://digitalhec-fc40e.firebaseio.com",
+  projectId: "digitalhec-fc40e",
+  storageBucket: "digitalhec-fc40e.appspot.com",
+  messagingSenderId: "569737326095",
+  appId: "1:569737326095:web:c7af01655cad7d43d47d7a",
+  measurementId: "G-50Z5DBWDKE"
+  }
+  
 };
  
 

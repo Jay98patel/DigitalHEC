@@ -52,21 +52,56 @@ scrollToSection(id: string) {
 //map
 showVar1: boolean = false;
   toggleChild1(){
-    this.showVar1 = !this.showVar; 
+    this.showVar1 = !this.showVar1; 
 }
 
 scrollToSection1(id: string) {
   setTimeout(() => {
-  const x = 'appointment'
+  const x = 'map'
   const element =this.renderer.selectRootElement(`#${x}`, true);
   if (element) {
       element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
   return false;
-}, 700);
+}, 1000);
+}
+//campshealth
+showVar2: boolean = false;
+  toggleChild2(){
+    this.showVar2 = !this.showVar2; 
+}
+
+scrollToSection2(id: string) {
+  setTimeout(() => {
+  const x = 'camp'
+  const element =this.renderer.selectRootElement(`#${x}`, true);
+  if (element) {
+      element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+  return false;
+}, 1000);
+}
+
+//campshealthend
+//specialist
+showVar3: boolean = false;
+  toggleChild3(){
+    this.showVar3 = !this.showVar3; 
+}
+
+scrollToSection3(id: string) {
+  setTimeout(() => {
+  const x = 'special'
+  const element =this.renderer.selectRootElement(`#${x}`, true);
+  if (element) {
+      element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+  return false;
+}, 1000);
 }
 
 
+//specialistend
 
   constructor(private renderer: Renderer2) { }
 

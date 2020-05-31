@@ -1,0 +1,47 @@
+<section id="camp" class="bg-appointment-form">
+    <div *ngIf="showMePartially2">
+        <div class="container shadow bg-white py-5">
+            <div class="row justify-content-center ">
+                <div class="col-lg-8 text-center ">
+                    <div>
+                        <h2 class="text-black mt-0 ">Health Camp</h2>
+                    </div>
+                </div>
+            </div>
+            <section class="tbl-wrapper">
+                <table class="table table-sm table-striped">
+                    <thead>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Mobile Number</th>
+                        <th>Address</th>
+                        <th>Description</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let custormer of campsArray">
+                            <td class="align-middle">
+                                <div class="img-wrapper mx-auto">
+                                    <img class="img-fluid" src="{{custormer.downloadlink1}}">
+                                </div>
+                            </td>
+                            <td class="align-middle">
+                                {{custormer.name}}
+                            </td>
+                            <td class="align-middle">
+                                {{custormer.mob}}
+                            </td>
+                            <td class="align-middle">
+                                {{custormer.addr}}
+                            </td>
+                            <td class="align-middle">
+                                {{custormer.desc}}
+                            </td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</section>

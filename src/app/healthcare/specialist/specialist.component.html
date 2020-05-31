@@ -1,0 +1,51 @@
+<section id="special" class="bg-appointment-form">
+    <div *ngIf="showMePartially3">
+        <div class="container shadow bg-white py-5 bg">
+            <div class="row justify-content-center ">
+                <div class="col-lg-8 text-center ">
+                    <div>
+                        <h2 class="text-black mt-0 ">Specialist</h2>
+                    </div>
+                </div>
+            </div>
+            <section class="tbl-wrapper">
+                <form class="form-inline">
+                    <input class="form-control search" name="searchInput" placeholder="Search Diseases Specialist" #searchInput="ngModel" [(ngModel)]="searchText">
+                    <button class="btn btn-outline-primary" (click)="searchText=''">X</button>
+
+                </form>
+                <table class="table table-sm table-striped">
+                    <thead>
+
+                        <th>Name</th>
+                        <th>Speciality</th>
+                        <th>Availability</th>
+                        <th>Time of Availability</th>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let custormer of specialArray">
+                            <tr *ngIf="filterCondition(custormer)">
+
+                                <td class="align-middle">
+                                    {{custormer.name}}
+                                </td>
+                                <td class="align-middle">
+                                    {{custormer.Speciality}}
+                                </td>
+                                <td class="align-middle">
+                                    {{custormer.available}}
+                                </td>
+                                <td class="align-middle">
+                                    {{custormer.time}}
+                                </td>
+
+
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+    </div>
+</section>

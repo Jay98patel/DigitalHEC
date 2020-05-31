@@ -5,22 +5,25 @@ import { HealthcareRoutingModule } from './healthcare-routing.module';
 import { HealthcareComponent } from './healthcare.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { NearbyhospitalComponent } from './nearbyhospital/nearbyhospital.component';
-import { environment } from 'src/environments/environment';
-import { AngularFireModule } from '@angular/fire'
-export const firebaseConfig =environment.firebaseConfig;
-import { AgmCoreModule } from '@agm/core'
+import { FormsModule, ReactiveFormsModule } from "@angular/forms"
+import { AppointserviceService } from '../appointservice.service';
+import { CampshealthComponent } from './campshealth/campshealth.component';
+import { SpecialistComponent } from './specialist/specialist.component'
 
 
 @NgModule({
-  declarations: [HealthhomeComponent, HealthcareComponent, AppointmentComponent, NearbyhospitalComponent],
+  declarations: [HealthhomeComponent, HealthcareComponent, AppointmentComponent, NearbyhospitalComponent, CampshealthComponent, SpecialistComponent],
   imports: [
     CommonModule,
-    HealthcareRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AgmCoreModule.forRoot({
-      apiKey: environment.googleMapsKey
-    })
+    HealthcareRoutingModule,  
+    ReactiveFormsModule,
+    FormsModule,
+   
+    
+   
   ],
+  providers:[AppointserviceService],
+  
   bootstrap: [HealthcareComponent]  
 })
 export class HealthcareModule { }

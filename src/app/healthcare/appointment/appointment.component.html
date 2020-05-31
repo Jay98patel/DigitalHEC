@@ -1,40 +1,69 @@
-<section id="appointment">
-
-
-    <div class="d-flex justify-content-center" *ngIf="showMePartially">
-
-        <div class="container bg-appointment-form shadow my-5 py-5">
-            <div>
-                <h1>
-                    Appointment Form
-                </h1>
+<section id="appointment" class=" bg-appointment-form">
+    <div class="d-flex justify-content-center py-5" *ngIf="showMePartially">
+        <div class="container shadow bg-white py-5">
+            <div class="row justify-content-center ">
+                <div class="col-lg-8 text-center ">
+                    <div>
+                        <h2 class="text-black mt-0 ">Appointment</h2>
+                    </div>
+                </div>
             </div>
-            <form autocomplete="off">
+
+            <form [formGroup]="this.appointserviceService.form" (ngSubmit)="onSubmit()">
                 <div class="row">
+                    <input type="hidden" formControlName="$key">
                     <div class="col-md-6 mb-5">
-                        <input type="text" class="form-control" name="name" placeholder="Name">
+                        <input type="text" formControlName="name" class="form-control" placeholder="Name" [ngClass]="{'is-invalid':submitted && formControls.name.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.name.errors">
+                            this field is required.
+                        </div>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <input type="num" class="form-control" name="address" placeholder="Phone Num">
+                        <input type="tel" formControlName="phnnum" class="form-control" placeholder="Phone Num" [ngClass]="{'is-invalid':submitted && formControls.phnnum.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.phnnum.errors">
+                            <label *ngIf="formControls.phnnum.errors.required">this field is required.</label>
+                            <label *ngIf="formControls.phnnum.errors.minlength">atleast 10 digit.</label>
+                            <label *ngIf="formControls.phnnum.errors.maxlength">not more than 10 digit.</label>
+                        </div>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <input type="text" class="form-control" name="phone" placeholder="Doctor's Name">
+                        <input type="text" formControlName="dname" class="form-control" placeholder="Doctor's Name" [ngClass]="{'is-invalid':submitted && formControls.dname.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.dname.errors">
+                            this field is required.
+                        </div>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <input type="text" class="form-control " name="address" placeholder="Hospital Name">
+                        <input type="text" formControlName="hname" class="form-control " placeholder="Hospital Name" [ngClass]="{'is-invalid':submitted && formControls.hname.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.hname.errors">
+                            this field is required.
+                        </div>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <input type="text" class="form-control" name="address" placeholder="diseases">
+                        <input type="text" formControlName="diseases" class="form-control" placeholder="diseases" [ngClass]="{'is-invalid':submitted && formControls.diseases.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.diseases.errors">
+                            this field is required.
+                        </div>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <input type="date" class="form-control" name="address" placeholder="Date of Appointment">
+                        <input type="date" formControlName="date" class="form-control" placeholder="Date of Appointment" [ngClass]="{'is-invalid':submitted && formControls.date.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.date.errors">
+                            this field is required.
+                        </div>
+                    </div>
+                    <div class="alert alert-info" *ngIf="appointmentmsg">
+                        <!-- <input type="text" formControlName="random" class="form-control" disabled> -->
+                        Your Appointment ID is {{ this.appointserviceService.random() }}
                     </div>
 
                 </div>
                 <div>
-                    <button class="btn btn-info">submit</button>
+                    <input type="submit" class="btn btn-info" value="Submit">
                 </div>
             </form>
+
+            <div class="alert alert-info" *ngIf="showSucessMsg">
+                Submitted Successfully
+            </div>
         </div>
     </div>
 </section>

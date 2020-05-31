@@ -24,20 +24,16 @@
             </div>
             <div class="col-lg-12 align-self-baseline">
                 <p class="text-white-75 font-weight-light mb-5"><b>Go healthy and happy...!!!!</b></p>
-                <button type="button" class="btn btn-primary btn-xl js-scroll-trigger mr-3" label="Click" (click)="toggleChild();scrollToSection('#appoitnment')">Appoinment</button>
-                <a class=" btn btn-primary btn-xl js-scroll-trigger mr-3 " label="Click" (click)="toggleChild1();scrollToSection1('#nearbyhospital')">Nearby Hospitals</a>
-                <a class="btn btn-primary btn-xl js-scroll-trigger mr-3 " href="#about ">Disease Specialist</a>
-                <a class="btn btn-primary btn-xl js-scroll-trigger " href="#about ">Health Camps </a>
+                <button type="button" class="btn btn-primary btn-xl js-scroll-trigger mr-3 mb-3" label="Click" (click)="toggleChild();scrollToSection('#appoitnment')">Appoinment</button>
+                <button type="button" class=" btn btn-primary btn-xl js-scroll-trigger mr-3 mb-3 " label="Click" (click)="toggleChild1();scrollToSection1('#map1')">Nearby Hospitals</button>
+                <button type="button" class=" btn btn-primary btn-xl js-scroll-trigger mr-3 mb-3 " label="Click" (click)="toggleChild3();scrollToSection3('#special')">Specialist</button>
+                <button type="button" class=" btn btn-primary btn-xl js-scroll-trigger mr-3 mb-3 " label="Click" (click)="toggleChild2();scrollToSection2('#camp')">Health Camps</button>
             </div>
         </div>
     </div>
 </header>
-<style>
-    .page-section1 {
-        padding: 1rem 0;
-    }
-</style>
-<section class="page-section1 bg-primary " id="about ">
+
+<section class="page-section1  bg-appointment-form" id="about ">
     <div class="container ">
         <div class="row justify-content-center ">
             <div class="col-lg-8 text-center ">
@@ -49,7 +45,7 @@
                         <ng-container class="carousel-item" *ngFor="let carousels of carousel; let i=index">
                             <div class="slider" *ngIf="current==i" @slide>
                                 <div>
-                                    <img class="img " [src]="carousels.image ">
+                                    <img class="img" [src]="carousels.image">
                                 </div>
                                 <div class="carousel-caption d-none d-md-block ">
                                     <h5 style="color:#11373C; ">{{carousels.carouselCaptionTitle}}</h5>
@@ -63,5 +59,7 @@
         </div>
     </div>
 </section>
-<app-appointment [showMePartially]="showVar "></app-appointment>
-<app-nearbyhospital [showMePartially1]="showVar1 "></app-nearbyhospital>
+<app-appointment [showMePartially]="showVar"></app-appointment>
+<app-campshealth [showMePartially2]="showVar2"></app-campshealth>
+<app-specialist [showMePartially3]="showVar3"></app-specialist>
+<app-nearbyhospital [showMePartially1]="showVar1"></app-nearbyhospital>
